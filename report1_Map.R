@@ -1,14 +1,14 @@
 
-library(icesTAF)
+lpibrary(icesTAF)
 taf.library(icesFO)
 library(sf)
 library(ggplot2)
-library(dplyr)
+library(dlyr)
 
 mkdir("report")
 
 # set values for automatic naming of files:
-year_cap = "2020"
+year_cap = "2021"
 ecoreg = "CS"
 
 ##########
