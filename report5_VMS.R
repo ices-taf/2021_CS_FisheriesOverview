@@ -66,7 +66,7 @@ write_layer <- function(dat, fname) {
   zip(paste0("report/", fname, ".zip"), files, extras = "-j")
   file.remove(files)
 }
-write_layer(effort, paste0(year_cap, "_", ecoreg,"_FO_VMS_effort"))
+write_layer(effort, paste0(cap_year, "_", ecoreg,"_FO_VMS_effort"))
 
 # save plot
 plot_effort_map(effort, ecoregion) +
