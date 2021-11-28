@@ -79,7 +79,7 @@ ggplot2::ggsave(file_name(cap_year,ecoreg_code,"VMS_effort", ext = "png"), path 
 #~~~~~~~~~~~~~~~#
 
 # write layer
-write_layer(sar, paste0(year_cap, "_", ecoreg,"_FO_VMS_sar"))
+write_layer(sar, paste0(cap_year, "_", ecoreg,"_FO_VMS_sar"))
 
 plot_sar_map(sar, ecoregion, what = "surface") +
   ggtitle(paste0("Average surface swept area ratio ",year_range))
