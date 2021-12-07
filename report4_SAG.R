@@ -44,10 +44,10 @@ unique(trends$FisheriesGuild)
 # 1. Benthic
 #~~~~~~~~~~~
 plot_stock_trends(trends, guild="benthic", cap_year, cap_month , return_data = FALSE)
-ggplot2::ggsave(paste0(year_cap, "_", ecoreg,"_FO_SAG_Trends_benthic.png"), path = "report/", width = 178, height = 130, units = "mm", dpi = 300)
+ggplot2::ggsave(file_name(cap_year,ecoreg_code,"SAG_Trends_benthic", ext = "png"), path = "report/", width = 178, height = 130, units = "mm", dpi = 300)
 
 dat <- plot_stock_trends(trends, guild="benthic", cap_year , cap_month, return_data = TRUE)
-write.taf(dat, file =paste0(year_cap, "_", ecoreg, "_FO_SAG_Trends_benthic.csv"), dir = "report")
+write.taf(dat, file =file_name(cap_year,ecoreg_code,"SAG_Trends_benthic", ext = "csv"), dir = "report")
 
 # 2. Demersal
 #~~~~~~~~~~~
@@ -68,18 +68,18 @@ write.taf(dat,file =file_name(cap_year,ecoreg_code,"SAG_Trends_pelagic", ext = "
 # 4. Elasmobranchs
 #~~~~~~~~~~~
 plot_stock_trends(trends, guild="elasmobranch", cap_year, cap_month ,return_data = FALSE )
-ggplot2::ggsave(paste0(year_cap, "_", ecoreg, "_FO_SAG_Trends_elasmobranch.png"), path = "report/", width = 178, height = 130, units = "mm", dpi = 300)
+ggplot2::ggsave(file_name(cap_year,ecoreg_code,"SAG_Trends_elasmobranch", ext = "png"), path = "report/", width = 178, height = 130, units = "mm", dpi = 300)
 
 dat <- plot_stock_trends(trends, guild="elasmobranch", cap_year , cap_month , return_data = TRUE)
-write.taf(dat, file =paste0(year_cap, "_", ecoreg, "_FO_SAG_Trends_elasmobranch.csv"), dir = "report" )
+write.taf(dat, file =file_name(cap_year,ecoreg_code,"SAG_Trends_elasmobranch", ext = "csv"), dir = "report" )
 
 # 5. Crustacean
 #~~~~~~~~~~~
 plot_stock_trends(trends, guild="crustacean", cap_year, cap_month ,return_data = FALSE )
-ggplot2::ggsave(paste0(year_cap, "_", ecoreg, "_FO_SAG_Trends_crustacean.png"), path = "report/", width = 178, height = 130, units = "mm", dpi = 300)
+ggplot2::ggsave(file_name(cap_year,ecoreg_code,"SAG_Trends_crustacean", ext = "png"), path = "report/", width = 178, height = 130, units = "mm", dpi = 300)
 
 dat <- plot_stock_trends(trends, guild="crustacean", cap_year , cap_month , return_data = TRUE)
-write.taf(dat, file =paste0(year_cap, "_", ecoreg, "_FO_SAG_Trends_crustacean.csv"), dir = "report" )
+write.taf(dat, file =file_name(cap_year,ecoreg_code,"SAG_Trends_crustacean", ext = "csv"), dir = "report" )
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~#
@@ -306,7 +306,7 @@ write.taf(dat, file = file_name(cap_year,ecoreg_code,"SAG_GESpies", ext = "csv")
 #pending
 
 dat <- format_annex_table(clean_status, year)
-html_annex_table(dat,"GS",2021)
+html_annex_table(dat, cap_year, ecoreg_code)
 write.taf(dat, file = file_name(cap_year,ecoreg_code,"annex_table", ext = "csv"), dir = "report", quote=TRUE)
 
 # This annex table has to be edited by hand,

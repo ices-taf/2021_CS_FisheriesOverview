@@ -31,7 +31,7 @@ sar <- dplyr::select(sar, -WKT)
 
 #set range of years in plots
 
-year_range = "2018-2021"
+year_range = "2017-2020"
 
 
 ###########
@@ -42,7 +42,7 @@ year_range = "2018-2021"
 # A. Effort map
 #~~~~~~~~~~~~~~~#
 
-gears <- c("Static", "Midwater", "Otter", "Demersal seine")
+gears <- c("Static", "Midwater", "Otter", "Demersal seine", "Beam", "Dredge")
 
 effort <-
     effort %>%
@@ -53,7 +53,9 @@ effort <-
             Static = "Static gears",
             Midwater = "Pelagic trawls and seines",
             Otter = "Bottom otter trawls",
-            `Demersal seine` = "Bottom seines"),
+            `Demersal seine` = "Bottom seines",
+            Beam = "Beam trawls",
+            Dredge = "Dredges"),
           mw_fishinghours = as.numeric(mw_fishinghours)
         ) %>%
       filter(!is.na(mw_fishinghours))

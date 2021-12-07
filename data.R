@@ -42,8 +42,8 @@ out_stocks <-  c("aru.27.123a4", "bli.27.nea", "bll.27.3a47de",
                  "san.sa.7r", "smn-dp")
 
 library(operators)
-clean_sag <- dplyr::filter(clean_sag, StockKeyLabel %in% out_stocks)
-clean_status <- dplyr::filter(clean_status, StockKeyLabel %in% out_stocks)
+clean_sag <- dplyr::filter(clean_sag, StockKeyLabel %!in% out_stocks)
+clean_status <- dplyr::filter(clean_status, StockKeyLabel %!in% out_stocks)
 detach("package:operators", unload=TRUE)
 
 write.taf(clean_sag, dir = "data")
