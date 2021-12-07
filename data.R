@@ -18,20 +18,20 @@ official <- read.taf("bootstrap/data/ICES_nominal_catches/ICES_2006_2018_catches
 prelim <- read.taf("bootstrap/data/ICES_nominal_catches/ICES_preliminary_catches.csv")
 
 catch_dat <-
-  format_catches(2020, "Celtic Seas",
+  format_catches(2021, "Celtic Seas",
     hist, official, prelim, species_list, sid)
 
 write.taf(catch_dat, dir = "data", quote = TRUE)
 
 
 # 2: SAG
-sag_sum <- read.taf("bootstrap/data/SAG_data/SAG_summary.csv")
-sag_refpts <- read.taf("bootstrap/data/SAG_data/SAG_refpts.csv")
-sag_status <- read.taf("bootstrap/data/SAG_data/SAG_status.csv")
+sag_sum <- read.taf("SAG_summary.csv")
+sag_refpts <- read.taf("SAG_refpts.csv")
+sag_status <- read.taf("SAG_status.csv")
 
-clean_sag <- format_sag(sag_sum, sag_refpts, 2020, "Celtic Seas")
+clean_sag <- format_sag(summary, refpts, 2021, "Celtic Seas")
 clean_sag <- unique(clean_sag)
-clean_status <- format_sag_status(sag_status, 2020, "Celtic Seas")
+clean_status <- format_sag_status(status, 2021, "Celtic Seas")
 
 out_stocks <-  c("aru.27.123a4", "bli.27.nea", "bll.27.3a47de",
                  "cap.27.2a514", "her.27.1-24a514a", "lin.27.5b", "reb.2127.dp",

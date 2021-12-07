@@ -14,11 +14,11 @@ clean_sag$FMSY[which(clean_sag$StockKeyLabel == "ank.27.78abd")] <- "1"
 # Have to substitute time-series of SSB of lez.27.6b with the custom column 2,
 # which is the biomass index used in the advice.
 
-icesSAG::findAssessmentKey("lez.27.6b", year = 2020)
+# icesSAG::findAssessmentKey("lez.27.6b", year = 2021)
 
-lezdat <- icesSAG::getCustomColumns(14009)
-lezdat <- lezdat %>% filter(customColumnId == 2)
-clean_sag <- clean_sag %>% mutate(SSB = replace(SSB,StockKeyLabel == "lez.27.6b", lezdat$customValue))
+# lezdat <- icesSAG::getCustomColumns(16879)
+# lezdat <- lezdat %>% filter(customColumnId == 2)
+# clean_sag <- clean_sag %>% mutate(SSB = replace(SSB,StockKeyLabel == "lez.27.6b", lezdat$customValue))
 
 write.taf(clean_sag, dir = "data")
 
