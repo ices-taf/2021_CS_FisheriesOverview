@@ -1,7 +1,7 @@
 
 library(icesTAF)
-taf.library(icesFO)
+library(icesFO)
 
 sid <- load_sid(2021)
 
-write.taf(sid, quote = TRUE)
+write.taf(sid, dir = "bootstrap/initial/data/ICES_StockInformation", quote = TRUE)

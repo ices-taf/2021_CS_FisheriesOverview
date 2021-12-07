@@ -1,21 +1,24 @@
 # Initial formatting of the data
 
 library(icesTAF)
-taf.library(icesFO)
+library(icesFO)
 library(dplyr)
 
 mkdir("data")
 
+# set working directory
+setwd("D:/Profile/Documents/GitHub/2021_CS_FisheriesOverview")
+
 # load species list
-species_list <- read.taf("bootstrap/data/FAO_ASFIS_species/species_list.csv")
-sid <- read.taf("bootstrap/data/ICES_StockInformation/sid.csv")
+species_list <- read.taf("bootstrap/initial/data/FAO_ASFIS_species/species_list.csv")
+sid <- read.taf("bootstrap/initial/data/ICES_StockInformation/sid.csv")
 
 
 # 1: ICES official catch statistics
 
-hist <- read.taf("bootstrap/data/ICES_nominal_catches/ICES_historical_catches.csv")
-official <- read.taf("bootstrap/data/ICES_nominal_catches/ICES_2006_2018_catches.csv")
-prelim <- read.taf("bootstrap/data/ICES_nominal_catches/ICES_preliminary_catches.csv")
+hist <- read.taf("bootstrap/initial/data/ICES_nominal_catches/ICES_historical_catches.csv")
+official <- read.taf("bootstrap/initial/data/ICES_nominal_catches/ICES_2006_2019_catches.csv")
+prelim <- read.taf("bootstrap/initial/data/ICES_nominal_catches/ICES_preliminary_catches.csv")
 
 catch_dat <-
   format_catches(2021, "Celtic Seas",
@@ -25,6 +28,7 @@ write.taf(catch_dat, dir = "data", quote = TRUE)
 
 
 # 2: SAG
+<<<<<<< HEAD
 sag_sum <- read.taf("SAG_summary.csv")
 sag_refpts <- read.taf("SAG_refpts.csv")
 sag_status <- read.taf("SAG_status.csv")
@@ -32,6 +36,15 @@ sag_status <- read.taf("SAG_status.csv")
 clean_sag <- format_sag(summary, refpts, 2021, "Celtic Seas")
 clean_sag <- unique(clean_sag)
 clean_status <- format_sag_status(status, 2021, "Celtic Seas")
+=======
+sag_sum <- read.taf("bootstrap/initial/data/SAG_data/SAG_summary.csv")
+sag_refpts <- read.taf("bootstrap/initial/data/SAG_data/SAG_refpts.csv")
+sag_status <- read.taf("bootstrap/initial/data/SAG_data/SAG_status.csv")
+
+clean_sag <- format_sag(sag_sum, sag_refpts, 2021, "Celtic Seas")
+clean_sag <- unique(clean_sag)
+clean_status <- format_sag_status(sag_status, 2021, "Celtic Seas")
+>>>>>>> 2ce21d959d49b160f462c007ca7111ce6f1ebc2c
 
 out_stocks <-  c("aru.27.123a4", "bli.27.nea", "bll.27.3a47de",
                  "cap.27.2a514", "her.27.1-24a514a", "lin.27.5b", "reb.2127.dp",

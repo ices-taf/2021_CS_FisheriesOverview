@@ -1,9 +1,8 @@
 
 
-taf.library("icesVMS")
+library("icesVMS")
 
-icesVMS::update_token("adriana.villamor")
-vms_effort <- icesVMS::get_effort_map("Baltic Sea")
+vms_effort <- icesVMS::get_effort_map("Celtic Seas")
 
 # convert to sf
 vms_effort$wkt <- sf::st_as_sfc(vms_effort$wkt)

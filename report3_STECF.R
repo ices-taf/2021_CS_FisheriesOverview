@@ -135,12 +135,19 @@ plot_stecf <- function(x, type, variable = NULL, cap_year, cap_month, line_count
 
 
         #Plot
+<<<<<<< HEAD
 plot_stecf(frmt_effort,type = "effort", variable= "COUNTRY", "2019","August", 9, "15-23", return_data = FALSE)
 frmt_effort <- dplyr::filter(frmt_effort, COUNTRY %in% c("Sweden", "Poland", "Germany", "Denmark", "Lithuania","Latvia"))
 plot_stecf(frmt_effort,type = "effort", variable= "COUNTRY", "2019","August", 9, "15-23", return_data = FALSE)
+=======
+
+plot_stecf(frmt_effort,type = "effort", variable= "COUNTRY", "2021","November", 9, "19-11", return_data = FALSE)
+# frmt_effort <- dplyr::filter(frmt_effort, COUNTRY %in% c("Sweden", "Poland", "Germany", "Denmark", "Lithuania","Latvia"))
+# plot_stecf(frmt_effort,type = "effort", variable= "COUNTRY", "2019","August", 9, "15-23", return_data = FALSE)
+>>>>>>> 2ce21d959d49b160f462c007ca7111ce6f1ebc2c
 ggplot2::ggsave(paste0(year_cap, "_", ecoreg,"_FO_STECF_effortCountry.png"), path = "report/", width = 178, height = 130, units = "mm", dpi = 300)
         #data
-dat <- plot_stecf(frmt_effort,type = "effort", variable= "COUNTRY", "2019","August", 9, "15-23", return_data = TRUE)
+dat <- plot_stecf(frmt_effort,type = "effort", variable= "COUNTRY", "2021","August", 9, "15-23", return_data = TRUE)
 write.taf(dat, file= paste0(year_cap, "_", ecoreg,"_FO_STECF_effortCountry.csv"), dir = "report")
 
 
@@ -257,11 +264,15 @@ plot_stecf <- function(x, type, variable = NULL, cap_year, cap_month, line_count
 
 
         #Plot
+<<<<<<< HEAD
 plot_stecf(frmt_effort,type = "effort", variable= "GEAR", "2019","August", 9, "15-23")
+=======
+plot_stecf(frmt_effort,type = "effort", variable= "GEAR", "2021","November", 9, "19-11")
+>>>>>>> 2ce21d959d49b160f462c007ca7111ce6f1ebc2c
 ggplot2::ggsave(paste0(year_cap, "_", ecoreg,"_FO_STECF_effortGear.png"), path = "report/", width = 178, height = 130, units = "mm", dpi = 300)
 
         #data
-dat<-plot_stecf(frmt_effort,type = "effort", variable= "GEAR", "2019","August", 9, "15-23", return_data = TRUE)
+dat<-plot_stecf(frmt_effort,type = "effort", variable= "GEAR", "2021","August", 9, "15-23", return_data = TRUE)
 write.taf(dat, file= paste0(year_cap, "_", ecoreg,"_FO_STECF_effortGear.csv"), dir = "report")
 
 #~~~~~~~~~~~~~~~#
@@ -374,8 +385,8 @@ plot_stecf <- function(x, type, variable = NULL, cap_year, cap_month, line_count
 
 
         #Plot
-plot_stecf(frmt_landings,type = "landings", variable= "GEAR", "2019","August", 9, "15-23")
+plot_stecf(frmt_landings,type = "landings", variable= "GEAR", "2021","August", 9, "15-23")
 ggplot2::ggsave(paste0(year_cap, "_", ecoreg,"_FO_STECF_landings.png"), path = "report/", width = 178, height = 130, units = "mm", dpi = 300)
         #dat
-dat <- plot_stecf(frmt_landings, type = "landings", variable="landings", "2019","August", 9, "15-23", return_data = TRUE)
+dat <- plot_stecf(frmt_landings, type = "landings", variable="landings", "2021","August", 9, "15-23", return_data = TRUE)
 write.taf(dat, file= paste0(year_cap, "_", ecoreg,"_FO_STECF_landings.csv"), dir = "report")
